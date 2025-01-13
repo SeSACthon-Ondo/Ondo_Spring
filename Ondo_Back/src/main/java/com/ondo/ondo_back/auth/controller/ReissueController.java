@@ -73,7 +73,7 @@ public class ReissueController {
         }
 
         // DB에 리프레쉬 토큰이 존재하는지 확인
-        Boolean isExist = refreshRepository.existsByRefresh(refresh);
+        Boolean isExist = refreshRepository.existsByRefreshToken(refresh);
 
         if (isExist == null || !isExist) {
 

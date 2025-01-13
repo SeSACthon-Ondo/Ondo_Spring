@@ -13,38 +13,34 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 public class RedisConfig {
 
-    private final String host;
-    private final int port;
+    @Value("${spring.data.redis.host}")
+    private String host;
 
-    public RedisConfig(
-            @Value("${spring.data.redis.host}") String host,
-            @Value("${spring.data.redis.port}") int port
-    ) {
-        this.host = host;
-        this.port = port;
-    }
+    @Value("${spring.data.redis.port}")
+    private int port;
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
-
+        System.out.println("Creating RedisConnectionFactory with host: " + host + ", port: " + port);
         return new LettuceConnectionFactory(host, port);
     }
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate() {
+        System.out.println("Creating RedisTemplate...");
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(redisConnectionFactory());
 
-        RedisTemplate<String, Object> redistTemplate = new RedisTemplate<>();
-        redisTemplate().setConnectionFactory(redisConnectionFactory());
-
-        redisTemplate().setKeySerializer(new StringRedisSerializer());
-        redisTemplate().setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
 
         ObjectMapper objectMapper = new ObjectMapper();
+        GenericJackson2JsonRedisSerializer serializer = new GenericJackson2JsonRedisSerializer(objectMapper);
 
-        GenericJackson2JsonRedisSerializer jsonSerializer = new GenericJackson2JsonRedisSerializer(objectMapper);
-        redistTemplate.setValueSerializer(jsonSerializer);
-        redistTemplate.setHashValueSerializer(jsonSerializer);
+        redisTemplate.setValueSerializer(serializer);
+        redisTemplate.setHashValueSerializer(serializer);
 
-        return redistTemplate;
+        System.out.println("RedisTemplate created successfully!");
+        return redisTemplate;
     }
 }
