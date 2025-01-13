@@ -78,7 +78,7 @@ public class LogoutController {
         }
 
         // 리프레쉬 토큰이 DB에 있는지 확인
-        if (!Boolean.TRUE.equals(refreshRepository.existsByRefresh(refreshToken))) {
+        if (!Boolean.TRUE.equals(refreshRepository.existsByRefreshToken(refreshToken))) {
 
             Map<String, String> errorResponse = new HashMap<>();
             errorResponse.put("status", "실패");

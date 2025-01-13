@@ -59,7 +59,7 @@ public class CustomLogoutFilter extends GenericFilterBean {
         }
 
         // 리프레쉬 토큰 유효성 검사
-        if (refresh == null || !"refresh".equals(jwtUtil.getCategory(refresh)) || !refreshRepository.existsByRefresh(refresh)) {
+        if (refresh == null || !"refresh".equals(jwtUtil.getCategory(refresh)) || !refreshRepository.existsByRefreshToken(refresh)) {
 
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().write("유효하지 않은 리프레쉬 토큰입니다.");

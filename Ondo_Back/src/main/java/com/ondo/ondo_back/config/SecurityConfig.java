@@ -92,8 +92,9 @@ public class SecurityConfig {
         });
 
         http.authorizeHttpRequests(authz -> {
-            authz.requestMatchers("/login").permitAll()
-                    .anyRequest().authenticated();
+            authz.anyRequest().permitAll();
+//            authz.requestMatchers("/login").permitAll()
+//                    .anyRequest().authenticated();
         });
 
         http.addFilterBefore(
