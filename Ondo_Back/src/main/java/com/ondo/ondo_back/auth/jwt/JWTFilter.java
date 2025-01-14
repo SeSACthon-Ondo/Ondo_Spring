@@ -43,7 +43,7 @@ public class JWTFilter extends OncePerRequestFilter {
         }
 
         // 헤더에서 AccessToken 꺼내기
-        String accessToken = request.getHeader("Authorization");
+        String accessToken = request.getHeader("Authorization").substring(7);;
 
         if (accessToken == null || !accessToken.startsWith("Bearer ")) {
 
