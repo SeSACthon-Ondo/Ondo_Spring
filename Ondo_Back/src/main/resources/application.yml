@@ -23,6 +23,12 @@ spring:
       port: 6379
       timeout: 2000ms
 
+#  config:
+#    activate:
+#      on-profile: local
+#    profiles:
+#      active: local
+
 server:
   port: 8080
 
@@ -38,3 +44,6 @@ management:
   endpoint:
     health:
       show-details: always
+
+openai:
+  api-key: ${OPENAI_API_KEY}
