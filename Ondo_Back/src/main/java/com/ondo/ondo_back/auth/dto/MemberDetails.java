@@ -38,7 +38,7 @@ public class MemberDetails implements UserDetails {
 
     public int getMemberId() {
 
-        return memberEntity.getId();
+        return memberEntity.getMemberId();
     }
 
     public String getNickname() {

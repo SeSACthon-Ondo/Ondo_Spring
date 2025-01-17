@@ -48,6 +48,6 @@ public class SignupService {
         Member savedMember = memberRepository.save(memberEntity);
 
         // 저장된 memberId 반환
-        return savedMember.getId();
+        return savedMember.getMemberId();
     }
 }

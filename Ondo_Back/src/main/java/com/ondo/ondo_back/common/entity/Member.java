@@ -14,8 +14,8 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id", nullable = false)
-    private int id;
+    @Column(name = "memberId", nullable = false)
+    private int memberId;
 
     @Column(name = "email", nullable = false)
     private String email;

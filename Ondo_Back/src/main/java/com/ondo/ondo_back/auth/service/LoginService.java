@@ -56,7 +56,7 @@ public class LoginService {
             String refreshToken = getOrCreateRefreshToken(email, role);
 
             MemberInfoDto memberInfo = new MemberInfoDto(
-                    memberEntity.getId(),
+                    memberEntity.getMemberId(),
                     memberEntity.getEmail(),
                     memberEntity.getNickname(),
                     memberEntity.getRole()
