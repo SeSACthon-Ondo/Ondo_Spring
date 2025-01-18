@@ -13,21 +13,21 @@ public class OnlineCultural {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "online_id", nullable = false)
-    private int id;
+    @Column(name = "onlineId", nullable = false)
+    private int onlineId;
 
-    @Column(name = "area")
+    @Column(name = "area", nullable = false)
     private String area;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "category")
+    @Column(name = "category", nullable = false)
     private String category;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 }

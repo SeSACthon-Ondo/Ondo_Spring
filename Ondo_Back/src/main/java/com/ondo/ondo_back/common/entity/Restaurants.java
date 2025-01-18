@@ -17,22 +17,22 @@ public class Restaurants {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "restaurant_id", nullable = false)
-    private int id;
+    @Column(name = "restaurantId", nullable = false)
+    private int restaurantId;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "latitude")
+    @Column(name = "latitude", nullable = false)
     private double latitude;
 
-    @Column(name = "longitude")
+    @Column(name = "longitude", nullable = false)
     private double longitude;
 
-    @Column(name = "category")
+    @Column(name = "category", nullable = false)
     private String category;
 
     @Lob

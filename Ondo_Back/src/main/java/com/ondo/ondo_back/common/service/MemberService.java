@@ -29,7 +29,7 @@ public class MemberService {
                 .orElseThrow(() -> new NoSuchElementException("사용자를 찾을 수 없습니다."));
 
         return new MemberInfoDto(
-                memberEntity.getId(),
+                memberEntity.getMemberId(),
                 memberEntity.getEmail(),
                 memberEntity.getNickname(),
                 memberEntity.getRole()
@@ -59,7 +59,7 @@ public class MemberService {
         memberRepository.save(memberEntity);
 
         return new MemberInfoDto(
-                memberEntity.getId(),
+                memberEntity.getMemberId(),
                 memberEntity.getEmail(),
                 memberEntity.getNickname(),
                 memberEntity.getRole()

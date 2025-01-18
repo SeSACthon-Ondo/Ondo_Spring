@@ -13,18 +13,18 @@ public class OfflineCultural {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "offline_id", nullable = false)
-    private int id;
+    @Column(name = "offlineId", nullable = false)
+    private int offlineId;
 
-    @Column(name = "area")
+    @Column(name = "area", nullable = false)
     private String area;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "category")
+    @Column(name = "category", nullable = false)
     private String category;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
 }
