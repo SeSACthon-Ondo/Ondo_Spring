@@ -9,4 +9,5 @@ public class RestaurantsRecommendResponseDto {
     private String category;
     private String address;
     private String menu;
+    private String review;
 }
