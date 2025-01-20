@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class RestaurantsRecommendRequestDto {
 
-    private String userLocation;
+    private String district;
+    private double latitude;
+    private double longitude;
     private String foodsQuery;
 }
