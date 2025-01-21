@@ -13,7 +13,7 @@ public class OfflineCultural {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "offlineId", nullable = false)
+    @Column(name = "offline_id", nullable = false)
     private int offlineId;
 
     @Column(name = "area", nullable = false)

@@ -13,7 +13,7 @@ public class OnlineCultural {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "onlineId", nullable = false)
+    @Column(name = "online_id", nullable = false)
     private int onlineId;
 
     @Column(name = "area", nullable = false)
